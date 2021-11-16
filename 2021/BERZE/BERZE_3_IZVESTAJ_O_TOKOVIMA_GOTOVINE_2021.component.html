@@ -1,0 +1,1629 @@
+<form [formGroup]="formGroup">
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <thead>
+      <tr>
+        <th colspan="3">
+          <h3>Попуњава берза</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Матични број <b>{{viewBag.MaticniBroj}}</b>
+        </td>
+        <td>
+          Шифра делатности <b>{{viewBag.SifraDelatnosti}}</b>
+        </td>
+        <td>
+          ПИБ <b>{{viewBag.Pib}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Назив <b>{{viewBag.Naziv}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Седиште <b>{{viewBag.Sediste}}</b>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="obrazac-naslov">
+    <h1>ИЗВЕШТАЈ О ТОКОВИМА ГОТОВИНЕ БЕРЗЕ</h1>
+    у периоду од {{viewBag.PeriodIzvestajaOd}} до {{viewBag.PeriodIzvestajaDo}} године
+  </div>
+
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="402" rowspan="2">
+          <p align="center">
+            <strong>Позиција</strong>
+          </p>
+        </td>
+        <td width="31" nowrap="" rowspan="2">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="311" colspan="2">
+          <p align="center">
+            <strong>Износ</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="155">
+          <p align="center">
+            <strong>текућа година</strong>
+          </p>
+        </td>
+        <td width="156">
+          <p align="center">
+            <strong>претходна година</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="402">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="31">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="155">
+          <p align="center">
+            <strong>3</strong>
+          </p>
+        </td>
+        <td width="156">
+          <p align="center">
+            <strong>4</strong>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td width="414">
+          <p><strong>А. ТОКОВИ ГОТОВИНЕ ИЗ ПОСЛОВНИХ АКТИВНОСТИ </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+
+          </p>
+        </td>
+
+        <td width="147" nowrap=""></td>
+        <td width="149" nowrap=""></td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>I. Приливи готовине из пословних активности (1 до 5) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3001
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3001-3", new { data_aopsum = "3001,3002,", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3001-4", new { data_aopsum = "3001,3002,", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3001_3" controlType="AopNumberInputField" data_aopsum="3002,3003,3004,3005,3006" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3001_4" controlType="AopNumberInputField" data_aopsum="3002,3003,3004,3005,3006" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Приливи по основу чланства </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3002
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3002-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3002-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3002_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3002_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Приливи од накнада за обављање послова листинга </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3003
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+    @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3003-3")
+  </td>
+  <td width="149" nowrap="">
+    @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3003-4")
+  </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3003_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3003_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Приливи од накнада за обављање послова на Опен маркету </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3004
+          </p>
+        </td>
+
+            <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3004-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3004-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3004_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3004_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>4. Приливи од накнада за обављање послова на МТП </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3005
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3005-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3005-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3005_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3005_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>5. Остали приливи по основу обављања делатности </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3006
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3006-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3006-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3006_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3006_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>II. Одливи готовине из пословних активности (1 до 8) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3007
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3007-3", new { data_aopsum = "3008,3009,3010,3011,3012,3013,3014,3015", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3007-4", new { data_aopsum = "3008,3009,3010,3011,3012,3013,3014,3015,", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3007_3" controlType="AopNumberInputField" data_aopsum="3008,3009,3010,3011,3012,3013,3014,3015" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3007_4" controlType="AopNumberInputField" data_aopsum="3008,3009,3010,3011,3012,3013,3014,3015" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Исплате добављачима и дати аванси у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3008
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3008-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3008-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3008_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3008_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Исплате добављачима и дати аванси у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3009
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3009-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3009-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3009_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3009_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Зараде, накнаде зарада и остали лични расходи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3010
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3010-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3010-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3010_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3010_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>4. Плаћене камате у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3011
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3011-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3011-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3011_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3011_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>5. Плаћене камате у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3012
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3012-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3012-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3012_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3012_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>6. Порез на добитак </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3013
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3013-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3013-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3013_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3013_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>7. Одливи по основу осталих јавних прихода </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3014
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3014-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3014-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3014_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3014_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>8. Остали одливи из пословних активности </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3015
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3015-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3015-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3015_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3015_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>III. Нето прилив готовине из пословних активности (I - II) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3016
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3016-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3016-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3016_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3016_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>IV. Нето одлив готовине из пословних активности (II - I) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3017
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3017-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3017-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3017_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3017_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Б. ТОКОВИ ГОТОВИНЕ ИЗ АКТИВНОСТИ ИНВЕСТИРАЊА </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+
+          </p>
+        </td>
+
+        <td width="147" nowrap=""></td>
+        <td width="149" nowrap=""></td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>I. Приливи готовине из активности инвестирања (1 до 5) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3018
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3018-3", new { data_aopsum = "3019,3020,3021,3022,3023", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3018-4", new { data_aopsum = "3019,3020,3021,3022,3023", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3018_3" controlType="AopNumberInputField" data_aopsum="3019,3020,3021,3022,3023" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3018_4" controlType="AopNumberInputField" data_aopsum="3019,3020,3021,3022,3023" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Продаја нематеријалне имовине, некретнина и опреме </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3019
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3019-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3019-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3019_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3019_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Продаје акција и удела </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3020
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3020-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3020-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3020_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3020_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Остали финансијски пласмани </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3021
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3021-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3021-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3021_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3021_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>4. Примљене камате из активности инвестирања </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3022
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3022-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3022-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3022_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3022_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>5. Примљене дивиденде </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3023
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3023-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3023-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3023_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3023_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>II. Одливи готовине из активности инвестирања (1 до 3) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3024
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3024-3", new { data_aopsum = "3025,3026,3027", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3024-4", new { data_aopsum = "3025,3026,3027", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3024_3" controlType="AopNumberInputField" data_aopsum="3025,3026,3027" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3024_4" controlType="AopNumberInputField" data_aopsum="3025,3026,3027" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Куповина акција и удела </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3025
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3025-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3025-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3025_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3025_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Куповина нематеријалне имовине, некретнина и опреме </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3026
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3026-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3026-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3026_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3026_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Остали финансијски пласмани </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3027
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3027-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3027-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3027_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3027_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>III. Нето прилив готовине из активности инвестирања (I - II) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3028
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3028-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3028-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3028_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3028_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>IV. Нето одлив готовине из активности инвестирања (II - I) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3029
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3029-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3029-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3029_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3029_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+
+
+
+      <tr>
+        <td width="402" rowspan="2">
+          <p align="center">
+            <strong>Позиција</strong>
+          </p>
+        </td>
+        <td width="31" nowrap="" rowspan="2">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="311" colspan="2">
+          <p align="center">
+            <strong>Износ</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="155">
+          <p align="center">
+            <strong>текућа година</strong>
+          </p>
+        </td>
+        <td width="156">
+          <p align="center">
+            <strong>претходна година</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="402">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="31">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="155">
+          <p align="center">
+            <strong>3</strong>
+          </p>
+        </td>
+        <td width="156">
+          <p align="center">
+            <strong>4</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>В. ТОКОВИ ГОТОВИНЕ ИЗ АКТИВНОСТИ ФИНАНСИРАЊА</strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+
+          </p>
+        </td>
+
+        <td width="147" nowrap=""></td>
+        <td width="149" nowrap=""></td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>I. Приливи готовине из активности финансирања (1 до 7) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3030
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3030-3", new { data_aopsum = "3031,3032,3033,3034,3035,3036,3037", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3030-4", new { data_aopsum = "3031,3032,3033,3034,3035,3036,3037", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3030_3" controlType="AopNumberInputField" data_aopsum="3031,3032,3033,3034,3035,3036,3037" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3030_4" controlType="AopNumberInputField" data_aopsum="3031,3032,3033,3034,3035,3036,3037" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Увећање основног капитала </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3031
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3031-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3031-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3031_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3031_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Дугорочни кредити у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3032
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+    @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3032-3")
+  </td>
+  <td width="149" nowrap="">
+    @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3032-4")
+  </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3032_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3032_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Дугорочни кредити у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3033
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3033-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3033-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3033_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3033_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>4. Краткорочни кредити у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3034
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3034-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3034-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3034_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3034_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>5. Краткорочни кредити у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3035
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3035-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3035-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3035_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3035_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>6. Остале дугорочне обавезе </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3036
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3036-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3036-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3036_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3036_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>7. Остале краткорочне обавезе </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3037
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3037-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3037-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3037_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3037_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>II. Одливи готовине из активности финансирања (1 до 7) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3038
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3038-3", new { data_aopsum = "3039,3040,3041,3042,3043,3044,3045", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3038-4", new { data_aopsum = "3039,3040,3041,3042,3043,3044,3045", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3038_3" controlType="AopNumberInputField" data_aopsum="3039,3040,3041,3042,3043,3044,3045" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3038_4" controlType="AopNumberInputField" data_aopsum="3039,3040,3041,3042,3043,3044,3045" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>1. Откуп сопствених акција </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3039
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3039-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3039-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3039_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3039_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>2. Дугорочни кредити у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3040
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3040-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3040-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3040_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3040_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>3. Дугорочни кредити у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3041
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3041-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3041-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3041_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3041_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>4. Краткорочни кредити у земљи </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3042
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3042-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3042-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3042_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3042_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>5. Краткорочни кредити у иностранству </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3043
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3043-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3043-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3043_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3043_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>6. Остале обавезе </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3044
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3044-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3044-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3044_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3044_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>7. Исплаћене дивиденде </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3045
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3045-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3045-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3045_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3045_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>III. Нето прилив готовине из активности финансирања (I - II) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3046
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3046-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3046-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3046_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3046_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p>IV. Нето одлив готовине из активности финансирања (II - I) </p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3047
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3047-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3047-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3047_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3047_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Г. СВЕГА ПРИЛИВ ГОТОВИНЕ (3001 + 3018+ 3030) </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3048
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3048-3", new { data_aopsum = "3001,3018,3030", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3048-4", new { data_aopsum = "3001,3018,3030", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3048_3" controlType="AopNumberInputField" data_aopsum="3001,3018,3030" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3048_4" controlType="AopNumberInputField" data_aopsum="3001,3018,3030" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Д. СВЕГА ОДЛИВ ГОТОВИНЕ (3007 + 3024 + 3038) </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3049
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3049-3", new { data_aopsum = "3007,3024,3038", data_aopsub = "", data_kol = "3", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3049-4", new { data_aopsum = "3007,3024,3038", data_aopsub = "", data_kol = "4", @readonly = "", @class = "poljaCijaSeVrednostAutomatskiRacuna" })
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3049_3" controlType="AopNumberInputField" data_aopsum="3007,3024,3038" data_aopsub="" data_kol="3" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3049_4" controlType="AopNumberInputField" data_aopsum="3007,3024,3038" data_aopsub="" data_kol="4" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Ђ. НЕТО ПРИЛИВ ГОТОВИНЕ (3048 - 3049) ≥ 0 </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3050
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3050-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3050-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3050_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3050_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Е. НЕТО ОДЛИВ ГОТОВИНЕ (3049 - 3048) ≥ 0 </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3051
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3051-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3051-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3051_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3051_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Ж. ГОТОВИНА НА ПОЧЕТКУ ОБРАЧУНСКОГ ПЕРИОДА </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3052
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3052-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3052-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3052_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3052_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>З. ПОЗИТИВНЕ КУРСНЕ РАЗЛИКЕ ПО ОСНОВУ ПРЕРАЧУНА ГОТОВИНЕ </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3053
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3053-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3053-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3053_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3053_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>И. НЕГАТИВНЕ КУРСНЕ РАЗЛИКЕ ПО ОСНОВУ ПРЕРАЧУНА ГОТОВИНЕ </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3054
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3054-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3054-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3054_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3054_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+      <tr>
+
+        <td width="414">
+          <p><strong>Ј. ГОТОВИНА НА КРАЈУ ОБРАЧУНСКОГ ПЕРИОДА (3050 - 3051+ 3052 + 3053 - 3054) </strong></p>
+        </td>
+        <td width="31" nowrap="">
+          <p align="center">
+            3055
+          </p>
+        </td>
+
+        <!--<td width="147" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3055-3")
+      </td>
+      <td width="149" nowrap="">
+        @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-3055-4")
+      </td>-->
+        <td width="147">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3055_3" controlType="AopNumberInputField" />
+        </td>
+        <td width="149">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_3055_4" controlType="AopNumberInputField" />
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <table border="0" cellspacing="0" cellpadding="0" class="tabela-potpis">
+    <tbody>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            У <u>____________________________</u>
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom"></td>
+        <td width="174" nowrap="" valign="bottom">
+          <p>
+            Законски заступник
+          </p>
+        </td>
+        <td width="64" nowrap="" valign="bottom"></td>
+      </tr>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            дана _____________________
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom">
+          <p>
+            М.П.
+          </p>
+        </td>
+
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            ___________________
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Образац прописан Правилником о контном оквиру и финансијским извештајима за берзе  („Службени гласник РС“ бр. 139/2020 и 75/2021).
+  </p>
+
+  <div class="col-md-offset-2 col-md-10">
+    <button type="button" class="btn btn-default" (click)="sacuvajObrazac()">Sacuvaj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="validirajObrazac()">Validiraj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="povratakNaSveZahteve()">Povratak na sve zahteve</button>
+    <div class="btn" style="width: 320px;display:inline-block">
+      <input type="file" id="file" (change)="handleFileInput($event)" style="width:195px;display:inline-block">
+      <button type="button" class="btn btn-default" (click)="uploadFileToActivity()">Popuni Obrazac iz XMLa</button>
+    </div>
+  </div>
+
+
+</form>

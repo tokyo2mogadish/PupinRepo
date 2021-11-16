@@ -1,0 +1,14 @@
+S obzirom da se statusi tj. stanja zahteva, razlikuju u novom sistemu u odnosu na stari, potrebne su izmene u skriptama u kojima se uzima u obzir FiStanje. 
+Primetili smo da validirate da li je stanje vece  ili jednako 0 ili 1 ("U pripremi"=0 i "Ceka dokumentaciju"=1).
+U novom sistemu status “U pripremi” ima vrednost 1, a “Ceka dokumentaciju” ne postoji (ako se ne varamo, “Ceka dokumentaciju” se odnosilo na hibridni nacin podnosenja).
+
+Primetili smo da ovu validaciju imate u narednim skriptama:
+
+•	DPL 2021-KP-RGFI-pun_obim
+•	DPL 2021-KP-RGFI-skraceni_obim
+•	PD 2021-KP-RGFI-siri_set
+•	PD 2021-KP-RGFI-uzi_set_pun_obim
+•	PD 2021-KP-RGFI-uzi_set-skraceni_obim
+•	ZAIF 2021-KP-RGFI
+
+**OVDE CU STAVITI OVE FAJLOVE CIJE JE STANJE PRE nego sta sam ih izminija za jovanu e **

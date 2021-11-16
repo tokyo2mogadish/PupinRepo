@@ -1,0 +1,601 @@
+<form [formGroup]="formGroup">
+
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <thead>
+      <tr>
+        <th colspan="3">
+          <h3>Попуњава друштво за управљање инвестиционим фондовима</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Матични број друштва: <b>{{viewBag.MaticniBroj}}</b>
+        </td>
+        <td>
+          Регистарски број фонда: <input formControlName="aop_10102_1" controlType="AopStringInputField" /><b></b>
+        </td>
+        <td>
+          ПИБ друштва: <b>{{viewBag.Pib}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Пословно име друштва: <b>{{viewBag.Naziv}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Седиште друштва: <b>{{viewBag.Sediste}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Назив фонда:<input formControlName="aop_10101_1" controlType="AopStringInputField" /> <b></b>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="obrazac-naslov">
+    <h1>
+      ИЗВЕШТАЈ О ПРОМЕНАМА НА НЕТО ИМОВИНИ
+      ОТВОРЕНОГ ИНВЕСТИЦИОНОГ ФОНДА СА ЈАВНОМ ПОНУДОМ
+
+    </h1>
+    на дан {{viewBag.PeriodIzvestajaDo}} године
+  </div>
+
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+
+        <td width="374" rowspan="2">
+          <p align="center">
+            <strong>ПОЗИЦИЈА</strong>
+          </p>
+        </td>
+        <td width="35" rowspan="2">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="106" rowspan="2">
+          <p align="center">
+            <strong>Напомена</strong>
+          </p>
+        </td>
+        <td width="212" colspan="2">
+          <p align="center">
+            <strong>Износ</strong>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td width="106">
+          <p align="center">
+            <strong>Текућа година</strong>
+          </p>
+        </td>
+        <td width="106">
+          <p align="center">
+            <strong>Претходна година</strong>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td width="270">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="32">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="148">
+          <p align="center">
+            <strong>3</strong>
+          </p>
+        </td>
+        <td width="114">
+          <p align="center">
+            <strong>4</strong>
+          </p>
+        </td>
+        <td width="116">
+          <p align="center">
+            <strong>5</strong>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+
+        <td width="293">
+          <p><strong>I НЕТО ИМОВИНА НА ПОЧЕТКУ ПЕРИОДА </strong></p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4001
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4001_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4001_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4001_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p><strong>II УКУПНА ПОВЕЋАЊА НЕТО ИМОВИНЕ (4003+4004+4005+4006+4007<br />+4008+4009) </strong></p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4002
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4002_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4002_5"
+                 controlType="AopNumberInputField" data_aopsum="4003,4004,4005,4006,4007,4008,4009" data_aopsub=""
+                 data_kol="5" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4002_6"
+                 controlType="AopNumberInputField" data_aopsum="4003,4004,4005,4006,4007,4008,4009" data_aopsub=""
+                 data_kol="6" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>1. Повећања по основу реализованих добитака </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4003
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4003_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4003_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4003_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>
+            2. Повећања по основу нереализованих добитака од хартија од вредности по фер вредности кроз остали
+            резултат
+          </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4004
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4004_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4004_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4004_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>
+            3. Повећања по основу нереализованих добитака од улагања у хартије од вредности по фер вредности кроз
+            биланс успеха
+          </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4005
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4005_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4005_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4005_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>4. Повећања по основу продаје инвестиционих јединица </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4006
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4006_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4006_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4006_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>5. Повећања по основу нереализованих добитака од курсних разлика </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4007
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4007_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4007_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4007_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>6. Повећања по основу нереализованих добитака од улагања у уделе </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4008
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4008_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4008_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4008_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>7. Повећања по основу осталих нереализованих добитака </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4009
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4009_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4009_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4009_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p><strong>III УКУПНА СМАЊЕЊА НЕТО ИМОВИНЕ (4011+4012+4013+4014+4015<br />+4016+4017) </strong></p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4010
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4010_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4010_5"
+                 controlType="AopNumberInputField" data_aopsum="4011,4012,4013,4014,4015,4016,4017" data_aopsub=""
+                 data_kol="5" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4010_6"
+                 controlType="AopNumberInputField" data_aopsum="4011,4012,4013,4014,4015,4016,4017" data_aopsub=""
+                 data_kol="6" class="poljaCijaSeVrednostAutomatskiRacuna" readonly />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>1. Смањења по основу реализованих губитака </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4011
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4011_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4011_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4011_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>
+            2. Смањења по основу нереализованих губитака од хартија од вредности по фер вредности кроз остали
+            резултат
+          </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4012
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4012_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4012_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4012_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>
+            3. Смањења по основу нереализованих губитака од улагања у хартије од вредности по фер вредности кроз
+            биланс успеха
+          </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4013
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4013_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4013_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4013_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>4. Смањења по основу откупа инвестиционих јединица </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4014
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4014_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4014_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4014_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>5. Смањења по основу нереализованих губитака од курсних разлика </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4015
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4015_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4015_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4015_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>6. Смањења по основу нереализованих губитака од улагања у уделе </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4016
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4016_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4016_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4016_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>7. Смањења по основу осталих нереализованих губитака </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4017
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4017_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4017_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4017_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+
+        <td width="293">
+          <p>IV НЕТО ИМОВИНА НА КРАЈУ ПЕРИОДА (4001+4002-4010)=0409 </p>
+        </td>
+        <td width="35">
+          <p align="center">
+            4018
+          </p>
+        </td>
+        <td width="106">
+          <input formControlName="aop_4018_4" controlType="AopStringInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4018_5"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="106">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4018_6"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+
+
+
+    </tbody>
+  </table>
+
+  
+  <table border="0" cellspacing="0" cellpadding="0" class="tabela-potpis">
+    <tbody>
+
+      <p>
+
+      </p>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            У <u>____________________________</u>
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom"></td>
+        <td width="174" nowrap="" valign="bottom">
+          <p>
+            Законски заступник друштва
+          </p>
+        </td>
+        <td width="64" nowrap="" valign="bottom"></td>
+      </tr>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            дана ______________20_______године
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom">
+          <p>
+
+          </p>
+        </td>
+
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            ___________________
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Образац прописан Правилником о Контном оквиру и финансијским извештајима за инвестиционе фондове ("Сл. гласник РС", бр. 139/2020 и 75/2021).
+
+  </p>
+
+
+
+  <div class="col-md-offset-2 col-md-10">
+    <button type="button" class="btn btn-default" (click)="sacuvajObrazac()">Sacuvaj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="validirajObrazac()">Validiraj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="povratakNaSveZahteve()">Povratak na sve zahteve</button>
+    <div class="btn" style="width: 320px;display:inline-block">
+      <input type="file" id="file" (change)="handleFileInput($event)" style="width:195px;display:inline-block">
+      <button type="button" class="btn btn-default" (click)="uploadFileToActivity()">Popuni Obrazac iz XMLa</button>
+    </div>
+  </div>
+
+
+</form>

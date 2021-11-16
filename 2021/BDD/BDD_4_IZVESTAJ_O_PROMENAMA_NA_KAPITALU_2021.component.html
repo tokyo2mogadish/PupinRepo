@@ -1,0 +1,4361 @@
+<form [formGroup]="formGroup">
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <thead>
+      <tr>
+        <th colspan="3">
+          <h3>Попуњава брокерско-дилерско друштво</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Матични број <b>{{viewBag.MaticniBroj}}</b>
+        </td>
+        <td>
+          Шифра делатности <b>@{{viewBag.SifraDelatnosti}}</b>
+        </td>
+        <td>
+          ПИБ <b>{{viewBag.Pib}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Пословно име <b>{{viewBag.Naziv}}</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Седиште <b>{{viewBag.Sediste}}</b>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="obrazac-naslov">
+
+    <!--@if (ViewBag.VrstaZahteva != VrstaZahteva.KFI && ViewBag.VrstaZahteva != VrstaZahteva.Zamena_KFI)
+    {-->
+    <h1>ИЗВЕШТАЈ О ПРОМЕНАМА НА КАПИТАЛУ<br>БРОКЕРСКО-ДИЛЕРСКОГ ДРУШТВА</h1>
+    <!--}
+    else
+    {-->
+    <h1>КОНСОЛИДОВАНИ ИЗВЕШТАЈ О ПРОМЕНАМА НА КАПИТАЛУ<br>БРОКЕРСКО-ДИЛЕРСКОГ ДРУШТВА</h1>
+    <!--}-->
+    у периоду од {{viewBag.PeriodIzvestajaOd}} до {{viewBag.PeriodIzvestajaDo}} године
+  </div>
+
+
+
+
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="26" rowspan="2">
+          <p align="center">
+            <strong>Ред. број</strong>
+          </p>
+        </td>
+        <td width="268" rowspan="2">
+          <p align="center">
+            <strong>ОПИС</strong>
+          </p>
+        </td>
+        <td width="768" colspan="12">
+          <p align="center">
+            <strong>Компоненте капитала</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="102">
+          <p align="center">
+            <strong>40</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>Основни капитал</strong>
+          </p>
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="93">
+          <p align="center">
+            <strong>41</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>Уписани а неуплаћени капитал</strong>
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="96">
+          <p align="center">
+            <strong>42 и 43</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>Резерве</strong>
+          </p>
+        </td>
+      <tr>
+        <td width="26">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="268">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102">
+          <p align="center">
+            <strong>3</strong>
+          </p>
+        </td>
+        <td width="34"></td>
+        <td width="93">
+          <p align="center">
+            <strong>4</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="96">
+          <p align="center">
+            <strong>5</strong>
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            1
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4001 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4001_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4023</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4023_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4045</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4045_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4002 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4002_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4024</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4024_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4046</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4046_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            2
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4003 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4003_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4025</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4025_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4047</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4047_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4004 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4004_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4026</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4026_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4048</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4048_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            3
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4005 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4005_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4027</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4027_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4049</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4049_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4006 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4006_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4028</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4028_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4050</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4050_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            4
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (1а + 2а - 2б + 3a - 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4007 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4007_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4029</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4029_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4051</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4051_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (1б - 2а + 2б - 3a + 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4008 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4008_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4030</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4030_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4052</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4052_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            5
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у претходној _____години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4009 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4009_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4031</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4031_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4053</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4053_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4010 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4010_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4032</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4032_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4054</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4054_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            6
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра претходне године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (4а + 5а - 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4011 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4011_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4033</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4033_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4055</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4055_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (4б - 5а + 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4012 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4012_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4034</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4034_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4056</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4056_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            7
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4013 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4013_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4035</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4035_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4057</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4057_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4014 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4014_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4036</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4036_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4058</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4058_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            8
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4015 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4015_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4037</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4037_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4059</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4059_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4016 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4016_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4038</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4038_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4060</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4060_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            9
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање текуће године на дан 01. 01. ______</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (6а + 7а - 7б + 8а - 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4017 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4017_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4039</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4039_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4061</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4061_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (6б - 7а + 7б - 8а + 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4018 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4018_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4040</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4040_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4062</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4062_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            10
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у текућој ____ години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4019 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4019_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4041</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4041_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4063</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4063_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4020 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4020_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4042</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4042_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4064</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4064_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            11
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра текуће _____ године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (9а + 10а - 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4021 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4021_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4043</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4043_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4065</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4065_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (9б - 10а + 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4022 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4022_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4044</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4044_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4066</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4066_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="26" rowspan="2">
+          <p align="center">
+            <strong>Ред. број</strong>
+          </p>
+        </td>
+        <td width="268" rowspan="2">
+          <p align="center">
+            <strong>ОПИС</strong>
+          </p>
+        </td>
+        <td width="768" colspan="12">
+          <p align="center">
+            <strong>Компоненте капитала</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="102">
+          <p align="center">
+            <strong>
+              Губитак
+            </strong>
+
+          </p>
+
+          <p align="center">
+            <strong>(група 46)</strong>
+          </p>
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="93">
+          <p align="center">
+            <strong>Откупљене сопствене акције</strong>
+
+          </p>
+
+          <p align="center">
+            <strong>(рачуни 026 и 246)</strong>
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="96">
+          <p align="center">
+            <strong>Нераспоређени добитак</strong>
+
+          </p>
+
+          <p align="center">
+            <strong>(група 45)</strong>
+          </p>
+        </td>
+      <tr>
+        <td width="26">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="268">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102">
+          <p align="center">
+            <strong>6</strong>
+          </p>
+        </td>
+        <td width="34"></td>
+        <td width="93">
+          <p align="center">
+            <strong>7</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="96">
+          <p align="center">
+            <strong>8</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            1
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4067 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4067_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4089</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4089_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4111</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4111_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4068 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4068_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4090</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4090_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4112</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4112_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            2
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4069 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4069_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4091</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4091_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4113</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4113_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4070 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4070_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4092</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4092_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4114</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4114_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            3
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4071 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4071_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4093</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4093_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4115</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4115_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4072 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4072_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4094</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4094_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4116</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4116_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            4
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (1а + 2а - 2б + 3a - 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4073 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4073_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4095</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4095_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4117</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4117_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (1б - 2а + 2б - 3a + 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4074 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4074_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4096</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4096_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4118</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4118_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            5
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у претходној _____години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4075 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4075_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4097</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4097_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4119</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4119_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4076 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4076_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4098</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4098_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4120</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4120_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            6
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра претходне године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (4а + 5а - 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4077 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4077_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4099</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4099_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4121</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4121_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (4б - 5а + 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4078 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4078_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4100</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4100_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4122</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4122_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            7
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4079 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4079_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4101</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4101_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4123</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4123_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4080 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4080_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4102</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4102_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4124</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4124_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            8
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4081 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4081_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4103</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4103_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4125</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4125_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4082 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4082_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4104</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4104_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4126</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4126_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            9
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање текуће године на дан 01. 01. ______</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (6а + 7а - 7б + 8а - 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4083 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4083_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4105</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4105_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4127</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4127_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (6б - 7а + 7б - 8а + 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4084 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4084_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4106</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4106_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4128</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4128_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            10
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у текућој ____ години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4085 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4085_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4107</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4107_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4129</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4129_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4086 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4086_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4108</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4108_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4130</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4130_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            11
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра текуће _____ године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (9а + 10а - 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4087 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4087_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4109</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4109_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4131</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4131_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (9б - 10а + 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4088 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4088_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4110</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4110_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4132</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4132_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="26" rowspan="2">
+          <p align="center">
+            <strong>Ред. број</strong>
+          </p>
+        </td>
+        <td width="268" rowspan="2">
+          <p align="center">
+            <strong>ОПИС</strong>
+          </p>
+        </td>
+        <td width="768" colspan="12">
+          <p align="center">
+            <strong>Компоненте осталог резултата</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="102">
+          <p align="center">
+            <strong>Ревалоризационе резерве</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>(рачун 440)</strong>
+          </p>
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="93">
+          <p align="center">
+            <strong>потражни салдо Нереализовани добици по основу хов</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>(група 44 осим 440) </strong>
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="96">
+          <p align="center">
+            <strong>42 и 43</strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong>Резерве</strong>
+          </p>
+        </td>
+      <tr>
+        <td width="26">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="268">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102">
+          <p align="center">
+            <strong>9</strong>
+          </p>
+        </td>
+        <td width="34"></td>
+        <td width="93">
+          <p align="center">
+            <strong>10</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="96">
+          <p align="center">
+            <strong>11</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            1
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4133 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4133_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4155</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4155_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4177</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4177_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4134 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4134_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4156</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4156_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4178</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4178_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            2
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4135 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4135_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4157</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4157_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4179</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4179_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4136 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4136_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4158</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4158_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4180</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4180_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            3
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4137 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4137_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4159</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4159_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4181</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4181_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4138 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4138_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4160</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4160_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4182</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4182_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            4
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (1а + 2а - 2б + 3a - 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4139 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4139_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4161</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4161_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4183</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4183_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (1б - 2а + 2б - 3a + 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4140 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4140_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4162</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4162_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4184</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4184_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            5
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у претходној _____години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4141 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4141_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4163</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4163_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4185</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4185_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4142 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4142_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4164</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4164_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4186</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4186_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            6
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра претходне године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (4а + 5а - 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4143 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4143_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4165</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4165_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4187</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4187_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (4б - 5а + 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4144 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4144_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4166</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4166_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4188</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4188_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            7
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4145 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4145_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4167</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4167_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4189</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4189_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4146 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4146_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4168</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4168_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4190</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4190_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            8
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4147 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4147_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4169</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4169_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4191</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4191_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4148 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4148_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4170</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4170_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4192</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4192_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            9
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање текуће године на дан 01. 01. ______</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (6а + 7а - 7б + 8а - 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4149 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4149_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4171</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4171_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4193</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4193_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (6б - 7а + 7б - 8а + 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4150 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4150_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4172</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4172_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4194</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4194_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            10
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у текућој ____ години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4151 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4151_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4173</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4173_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4195</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4195_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4152 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4152_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4174</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4174_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4196</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4196_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            11
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра текуће _____ године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (9а + 10а - 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4153 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4153_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4175</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4175_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4197</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4197_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (9б - 10а + 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4154 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4154_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4176</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4176_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4198</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4198_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <div class="obrazac-note">
+    - у хиљадама динара -
+  </div>
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="26" rowspan="2">
+          <p align="center">
+            <strong>Ред. број</strong>
+          </p>
+        </td>
+        <td width="268" rowspan="2">
+          <p align="center">
+            <strong>ОПИС</strong>
+          </p>
+        </td>
+        <td width="132" colspan="2">
+          <p align="center">
+            <strong>Компоненте осталог резултата</strong>
+          </p>
+        </td>
+        <td width="30" rowspan="2">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="93" rowspan="2">
+          <p align="center">
+            <strong>Укупан капитал [∑(ред б кол 3 до кол 12) - ∑(ред а кол 3 до кол 12)] ≥ 0 </strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong> </strong>
+          </p>
+        </td>
+        <td width="30" rowspan="2">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="96" rowspan="2">
+          <p align="center">
+            <strong>
+              Губитак изнад висине капитала [∑(ред а кол 3 до кол 12) - ∑(ред б кол 3 до кол 12)] ≥ 0
+            </strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+        </td>
+
+      </tr>
+      <tr>
+        <td width="30">
+          <p align="center">
+            <strong>АОП</strong>
+          </p>
+        </td>
+        <td width="102">
+          <p align="center">
+            <strong>Учешће без права контроле </strong>
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+          <p align="center">
+            <strong></strong>
+          </p>
+        </td>
+
+
+      <tr>
+        <td width="26">
+          <p align="center">
+            <strong>1</strong>
+          </p>
+        </td>
+        <td width="268">
+          <p align="center">
+            <strong>2</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102">
+          <p align="center">
+            <strong>12</strong>
+          </p>
+        </td>
+        <td width="34"></td>
+        <td width="93">
+          <p align="center">
+            <strong>13</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="96">
+          <p align="center">
+            <strong>14</strong>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            1
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4199 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4199_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4221</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4221_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4243</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4243_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4200 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4200_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4222</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4222_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4244</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4244_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            2
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4201 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4201_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4223</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4223_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4245</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4245_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4202 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4202_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4224</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4224_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4246</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4246_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            3
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4203 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4203_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4225</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4225_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4247</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4247_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4204 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4204_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4226</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4226_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4248</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4248_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            4
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање на дан 01. јануара претходне године</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (1а + 2а - 2б + 3a - 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4205 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4205_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4227</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4227_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4249</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4249_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (1б - 2а + 2б - 3a + 3b) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4206 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4206_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4228</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4228_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4250</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4250_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            5
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у претходној _____години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4207 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4207_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4229</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4229_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4251</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4251_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4208 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4208_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4230</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4230_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4252</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4252_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            6
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра претходне године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (4а + 5а - 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4209 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4209_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4231</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4231_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4253</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4253_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (4б - 5а + 5б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4210 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4210_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4232</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4232_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4254</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4254_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            7
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Ефекти прве примене нових МСФИ</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4211 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4211_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4233</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4233_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4255</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4255_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4212 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4212_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4234</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4234_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4256</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4256_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            8
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Исправка материјално значајних грешака и промена рачуноводствених политика</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) исправке на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4213 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4213_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4235</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4235_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4257</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4257_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) исправке на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4214 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4214_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4236</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4236_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4258</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4258_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            9
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Кориговано почетно стање текуће године на дан 01. 01. ______</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) кориговани дуговни салдо рачуна (6а + 7а - 7б + 8а - 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4215 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4215_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4237</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4237_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4259</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4259_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) кориговани потражни салдо рачуна (6б - 7а + 7б - 8а + 8б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4216 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4216_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4238</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4238_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4260</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4260_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            10
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Промене у текућој ____ години</strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) промет на дуговној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4217 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4217_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4239</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4239_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4261</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4261_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) промет на потражној страни рачуна
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4218 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4218_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4240</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4240_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4262</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4262_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="26" rowspan="3">
+          <p align="center">
+            11
+          </p>
+        </td>
+        <td width="268">
+          <p>
+            <strong>Стање на дан 31. децембра текуће _____ године </strong>
+          </p>
+        </td>
+        <td width="30"></td>
+        <td width="102"></td>
+        <td width="34"></td>
+        <td width="93"></td>
+        <td width="30"></td>
+        <td width="96"></td>
+
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            а) дуговни салдо рачуна (9а + 10а - 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4219 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4219_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4241</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4241_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4263</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4263_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+      <tr>
+        <td width="268">
+          <p>
+            б) потражни салдо рачуна (9б - 10а + 10б) ≥ 0
+          </p>
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong> 4220 </strong>
+          </p>
+        </td>
+        <td width="102">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4220_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="34">
+          <p align="center">
+            <strong> 4242</strong>
+          </p>
+        </td>
+        <td width="93">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4242_1"
+                 controlType="AopNumberInputField" />
+        </td>
+        <td width="30">
+          <p align="center">
+            <strong>4264</strong>
+          </p>
+        </td>
+        <td width="96">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_4264_1"
+                 controlType="AopNumberInputField" />
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <table border="0" cellspacing="0" cellpadding="0" class="tabela-potpis">
+    <tbody>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            У <u>____________________________</u>
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom"></td>
+        <td width="174" nowrap="" valign="bottom">
+          <p>
+            Законски заступник
+          </p>
+        </td>
+        <td width="64" nowrap="" valign="bottom"></td>
+      </tr>
+      <tr>
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            дана ______________20_______године
+          </p>
+        </td>
+        <td width="173" nowrap="" valign="bottom">
+          <p>
+
+          </p>
+        </td>
+
+        <td width="353" nowrap="" colspan="2">
+          <p>
+            ___________________
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Образац прописан Правилником о контном оквиру и финансијским извештајима за брокерско – дилерска друштва („Службени гласник РС“ бр. 15/2014, 137/2014, 143/2014 и 25/2018).
+  </p>
+
+  <div class="col-md-offset-2 col-md-10">
+    <button type="button" class="btn btn-default" (click)="sacuvajObrazac()">Sacuvaj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="validirajObrazac()">Validiraj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="povratakNaSveZahteve()">Povratak na sve zahteve</button>
+    <div class="btn" style="width: 320px;display:inline-block">
+      <input type="file" id="file" (change)="handleFileInput($event)" style="width:195px;display:inline-block">
+      <button type="button" class="btn btn-default" (click)="uploadFileToActivity()">Popuni Obrazac iz XMLa</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,219 @@
+<form [formGroup]="formGroup">
+
+  <h2>ПОСЕБНИ ПОДАЦИ ЗА РЕДОВНИ ГОДИШЊИ ФИНАНСИЈСКИ ИЗВЕШТАЈ</h2>
+
+  <h3>ПОДАЦИ О ПРОСЕЧНОМ БРОЈУ ЗАПОСЛЕНИХ</h3>
+
+  <br />
+  <h3>РАЗВРСТАВАЊЕ</h3>
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Величина за наредну пословну годину</strong>
+          </p>
+          <ul style="list-style-type:none">
+            <li>За микро правно лице уписати ознаку 1</li>
+            <li>За мало правно лице уписати ознаку 2</li>
+            <li>За средње правно лице уписати ознаку 3</li>
+            <li>За велико правно лице уписати ознаку 4</li>
+          </ul>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10001-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10001_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>
+            •Платне институције и институције електронског новца, као и факторинг друштва уносе ознаку за велика правна лица (ознака 4)
+          </p>
+          <p>
+            •Новооснована правна лица и предузетници разврставају се на основу података из финансијских извештаја за пословну годину у којој су основани, односно у којој су почели да воде књиге по систему двојног књиговодства и броја месеци пословања, а утврђени податак користе за ту и наредну пословну годину.
+          </p>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--@{
+
+  string ulaz = ViewBag.PeriodIzvestajaDo;
+  ulaz = ulaz.Substring(0, ulaz.Length - 1);//izbacuje se poslednja tacka iz stringa koji je u formatu npr "31.12.2019."
+  DateTime periodDo = DateTime.ParseExact(ulaz, "dd.MM.yyyy", null);
+
+  }-->
+
+
+
+  <a href="http://pretraga3.apr.gov.rs/pretragaObveznikaFI/calculator" target="_blank">Kalkulator veličine</a>
+  <br />
+
+  <h3>ПОДАЦИ ЗА УТВРЂИВАЊЕ ВЕЛИЧИНЕ</h3>
+  <div>
+    * Податке за утврђивање величине не попуњавају платне институције и институције електронског новца као и факторинг друштва која се, у складу са чланом 6. Закона о рачуноводству, сматрају великим правним лицима.
+  </div>
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Просечан број запослених (цео број)</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10002-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10002_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>
+            •податак мора бити једнак податку исказаном у статистичком извештају на АОП-у 9005 у колони 3
+          </p>
+
+        </td>
+      </tr>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Пословни приход (у хиљадама динара)</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10003-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10003_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>
+            •податак мора бити једнак податку исказаном у билансу успеха на АОП-у 1001  у колони 5
+          </p>
+
+        </td>
+      </tr>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Вредност укупне активе на датум биланса(у хиљадама динара)</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10004-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10004_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>
+            •податак мора бити једнак податку исказаном у билансу стања на АОП-у 0059 у колони 5
+          </p>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <br />
+
+
+  <br />
+
+  <h3>ПОДАЦИ КОЈЕ УНОСЕ ПРАВНА ЛИЦА И ПРЕДУЗЕТНИЦИ КОЈИ НЕМАЈУ ОБЈАВЉЕНЕ ИСПРАВНЕ ФИНАНСИЈСКЕ ИЗВЕШТАЈЕ И ВЕРИФИКОВАНУ ВЕЛИЧИНУ ЗА ПРЕТХОДНУ ИЗВЕШТАЈНУ ГОДИНУ И ВЕРИФИКОВАНУ ВЕЛИЧИНУ </h3>
+  <div>* Подаци се користе за утврђивање величине </div>
+
+  <!--@Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10999-2", new { style = "display:none" })-->
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Просечан број запослених (цео број) у претходној извештајној години:</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10102-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10102_1" controlType="AopNumberInputField" />
+        </td>
+        <td>•податак мора бити једнак податку исказаном у статистичком извештају на АОП-у 9005 у колони 4</td>
+      </tr>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Пословни приход у претходној извештајној години:</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10103-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10103_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>
+            • податак мора бити једнак податку исказаном у билансу успеха на АОП-у 1001  у колони 6
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Вредност укупне активе на датум биланса претходне извештајне године (у хиљадама динара)</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10104-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10104_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>• податак мора бити једнак податку исказаном у билансу стања на АОП-у 0059 у колони 6</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <div>* Податак се користи за утврђивање обавезе вршења ревизије по основу укупног прихода оствареног у претходној пословној години који прелази 4.400.000 евра у динарској противвредности </div>
+
+  <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="300">
+          <p align="center">
+            <strong>Укупни приходи остварени у претходној извештајној години</strong>
+          </p>
+        </td>
+        <!--<td width="200">
+          @Html.AopNumberInputField(Model.NumerickaPoljaForme, "aop-10110-1")
+        </td>-->
+        <td width="200">
+          <input currencyMask [options]="maskPosConfig" formControlName="aop_10110_1" controlType="AopNumberInputField" />
+        </td>
+        <td>
+          <p>•податак мора бити једнак податку исказаном у билансу успеха на АОП-у 1043  у колони 6</p>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="col-md-offset-2 col-md-10">
+    <button type="button" class="btn btn-default" (click)="sacuvajObrazac()">Sacuvaj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="validirajObrazac()">Validiraj obrazac</button>
+    <button type="button" class="btn btn-default" (click)="povratakNaSveZahteve()">Povratak na sve zahteve</button>
+    <div class="btn" style="width: 320px;display:inline-block">
+      <input type="file" id="file" (change)="handleFileInput($event)" style="width:195px;display:inline-block">
+      <button type="button" class="btn btn-default" (click)="uploadFileToActivity()">Popuni Obrazac iz XMLa</button>
+    </div>
+  </div>
+
+
+</form>
