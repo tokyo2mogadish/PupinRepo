@@ -92,20 +92,20 @@ def Validate(Zahtev):
 
 
         #Prilagoditi proveru postojanja forme u zavisnosti od tipa FI
-        bs = getForme(Zahtev,'Bilans stanja-DUDPF')
+        bs = getForme(Zahtev,'Bilans stanja')
         if len(bs)==0:
             
             naziv_obrasca='Bilans stanja'
-            poruka  ='Bilans stanja-DUDPF nije popunjen'
+            poruka  ='Bilans stanja nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
 
-        bu = getForme(Zahtev,'Bilans uspeha-DUDPF')
+        bu = getForme(Zahtev,'Bilans uspeha')
         if len(bu)==0:
             
             naziv_obrasca='Bilans uspeha'
-            poruka  ='Bilans uspeha-DUDPF nije popunjen'
+            poruka  ='Bilans uspeha nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
