@@ -2278,101 +2278,101 @@ def Validate(Zahtev):
         #10096
         #Za ovaj set se ne primenjuje pravilo 
         
-        #10097
-        if not( aop(bu,1057,5) == 0 ):
-            lzbir =  aop(bu,1057,5) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10097
+        # if not( aop(bu,1057,5) == 0 ):
+        #     lzbir =  aop(bu,1057,5) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1057 kol. 5 = 0 Neto dobitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1057 kol. 5 = 0 Neto dobitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10098
-        if not( aop(bu,1057,6) == 0 ):
-            lzbir =  aop(bu,1057,6) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10098
+        # if not( aop(bu,1057,6) == 0 ):
+        #     lzbir =  aop(bu,1057,6) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1057 kol. 6 = 0 Neto dobitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1057 kol. 6 = 0 Neto dobitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10099
-        if not( aop(bu,1058,5) == 0 ):
-            lzbir =  aop(bu,1058,5) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10099
+        # if not( aop(bu,1058,5) == 0 ):
+        #     lzbir =  aop(bu,1058,5) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1058 kol. 5 = 0 Neto dobitak koji pripada matičnom pravnom licu  prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1058 kol. 5 = 0 Neto dobitak koji pripada matičnom pravnom licu  prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10100
-        if not( aop(bu,1058,6) == 0 ):
-            lzbir =  aop(bu,1058,6) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10100
+        # if not( aop(bu,1058,6) == 0 ):
+        #     lzbir =  aop(bu,1058,6) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1058 kol. 6 = 0 Neto dobitak koji pripada matičnom pravnom licu  prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1058 kol. 6 = 0 Neto dobitak koji pripada matičnom pravnom licu  prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10101
-        if not( aop(bu,1059,5) == 0 ):
-            lzbir =  aop(bu,1059,5) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10101
+        # if not( aop(bu,1059,5) == 0 ):
+        #     lzbir =  aop(bu,1059,5) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1059 kol. 5 = 0 Neto gubitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1059 kol. 5 = 0 Neto gubitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10102
-        if not( aop(bu,1059,6) == 0 ):
-            lzbir =  aop(bu,1059,6) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10102
+        # if not( aop(bu,1059,6) == 0 ):
+        #     lzbir =  aop(bu,1059,6) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1059 kol. 6 = 0 Neto gubitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1059 kol. 6 = 0 Neto gubitak koji pripada učešćima bez prava kontrole prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10103
-        if not( aop(bu,1060,5) == 0 ):
-            lzbir =  aop(bu,1060,5) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10103
+        # if not( aop(bu,1060,5) == 0 ):
+        #     lzbir =  aop(bu,1060,5) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1060 kol. 5 = 0 Neto gubitak koji pripada matičnom pravnom licu prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1060 kol. 5 = 0 Neto gubitak koji pripada matičnom pravnom licu prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
-        #10104
-        if not( aop(bu,1060,6) == 0 ):
-            lzbir =  aop(bu,1060,6) 
-            dzbir =  0 
-            razlika = lzbir - dzbir
+        # #10104
+        # if not( aop(bu,1060,6) == 0 ):
+        #     lzbir =  aop(bu,1060,6) 
+        #     dzbir =  0 
+        #     razlika = lzbir - dzbir
             
-            naziv_obrasca='Bilans uspeha'
-            poruka  ='AOP 1060 kol. 6 = 0 Neto gubitak koji pripada matičnom pravnom licu prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
-            aop_pozicije=[]
-            poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
-            form_errors.append(poruka_obrasca)
+        #     naziv_obrasca='Bilans uspeha'
+        #     poruka  ='AOP 1060 kol. 6 = 0 Neto gubitak koji pripada matičnom pravnom licu prikazuje se samo u konsolidovanom FI '+'(Levi zbir = '+'' +str(lzbir)+ ''+', Desni zbir = '+'' +str(dzbir)+ ''+', Razlika = '+'' +str(razlika)+ ''+') '
+        #     aop_pozicije=[]
+        #     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
+        #     form_errors.append(poruka_obrasca)
         
         #10105
         #Za ovaj set se ne primenjuje pravilo 
