@@ -163,7 +163,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
 
         bua = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje života')
-        if (bua == None or len(bua)==0):
+        if (bua != None and len(bua)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje života'
@@ -173,7 +173,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
 
         bub = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-životna osiguranja osim osiguranja života')
-        if (bub == None or len(bub)==0):
+        if (bub != None and len(bub)==0):
             
             
             naziv_obrasca='Bilans uspeha-životna osiguranja osim osiguranja života'
@@ -183,7 +183,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         buc = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-životna osiguranja, zbirno')
-        if (buc == None or len(buc)==0):
+        if (buc != None and len(buc)==0):
             
             
             naziv_obrasca='Bilans uspeha-životna osiguranja, zbirno'
@@ -193,7 +193,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         bud = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje od posledica nezgode i dobrovoljno zdravstveno osiguranje')
-        if (bud == None or len(bud)==0):
+        if (bud != None and len(bud)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje od posledica nezgode i dobrovoljno zdravstveno osiguranje'
@@ -203,7 +203,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
 
         bue = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje vozila')
-        if (bue == None or len(bue)==0):
+        if (bue != None and len(bue)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje vozila'
@@ -213,7 +213,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
  
         buf = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje plovnih objekata i transporta')
-        if (buf == None or len(buf)==0):
+        if (buf != None and len(buf)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje plovnih objekata i transporta'
@@ -223,7 +223,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         bug = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje vazduhoplova')
-        if (bug == None or len(bug)==0):
+        if (bug != None and len(bug)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje vazduhoplova'
@@ -233,7 +233,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         buh = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-imovinska osiguranja')
-        if (buh == None or len(buh)==0):
+        if (buh != None and len(buh)==0):
             
             
             naziv_obrasca='Bilans uspeha-imovinska osiguranja'
@@ -243,7 +243,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         bui = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje od odgovornosti')
-        if (bui == None or len(bui)==0):
+        if (bui != None and len(bui)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje od odgovornosti'
@@ -253,7 +253,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         buj = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-osiguranje kredita i jemstva')
-        if (buj == None or len(buj)==0):
+        if (buj != None and len(buj)==0):
             
             
             naziv_obrasca='Bilans uspeha-osiguranje kredita i jemstva'
@@ -263,7 +263,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         buk = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-neživotna osiguranja koja nisu svrstana u podgrupe')
-        if (buk == None or len(buk)==0):
+        if (buk != None and len(buk)==0):
             
             
             naziv_obrasca='Bilans uspeha-neživotna osiguranja koja nisu svrstana u podgrupe'
@@ -273,7 +273,7 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
             
         bul = getFormeBilansaUspeha(Zahtev,'Bilans uspeha-neživotna osiguranja, zbirno')
-        if (bul == None or len(bul)==0):
+        if (bul != None and len(bul)==0):
             
             
             naziv_obrasca='Bilans uspeha-neživotna osiguranja, zbirno'

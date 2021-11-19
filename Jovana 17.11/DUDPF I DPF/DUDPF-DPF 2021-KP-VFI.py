@@ -111,47 +111,47 @@ def Validate(Zahtev):
             form_errors.append(poruka_obrasca)
 
 
-        fia = getForme(Zahtev,'Finansijski izveštaj DPF 1')
+        fia = getForme(Zahtev,'Fond 1')
         if len(fia)==0:
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
-            poruka  ='Finansijski izveštaj DPF 1 nije popunjen'
+            naziv_obrasca='Fond 1'
+            poruka  ='Fond 1 nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
 
-        fib = getForme(Zahtev,'Finansijski izveštaj DPF 2')
+        fib = getForme(Zahtev,'Fond 2')
         if len(fib)==0:
             
-            naziv_obrasca='Finansijski izveštaj DPF 2'
-            poruka  ='Finansijski izveštaj DPF 2 nije popunjen'
+            naziv_obrasca='Fond 2'
+            poruka  ='Fond 2 nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
 
-        fic = getForme(Zahtev,'Finansijski izveštaj DPF 3')
+        fic = getForme(Zahtev,'Fond 3')
         if len(fic)==0:
             
-            naziv_obrasca='Finansijski izveštaj DPF 3'
-            poruka  ='Finansijski izveštaj DPF 3 nije popunjen'
+            naziv_obrasca='Fond 3'
+            poruka  ='Fond 3 nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
         
-        fid = getForme(Zahtev,'Finansijski izveštaj DPF 4')
+        fid = getForme(Zahtev,'Fond 4')
         if len(fid)==0:
             
-            naziv_obrasca='Finansijski izveštaj DPF 4'
-            poruka  ='Finansijski izveštaj DPF 4 nije popunjen'
+            naziv_obrasca='Fond 4'
+            poruka  ='Fond 4 nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
         
-        fie = getForme(Zahtev,'Finansijski izveštaj DPF 5')
+        fie = getForme(Zahtev,'Fond 5')
         if len(fie)==0:
             
-            naziv_obrasca='Finansijski izveštaj DPF 5'
-            poruka  ='Finansijski izveštaj DPF 5 nije popunjen'
+            naziv_obrasca='Fond 5'
+            poruka  ='Fond 5 nije popunjen'
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
@@ -1342,7 +1342,7 @@ def Validate(Zahtev):
         #00000
         if not(suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="Zbir podataka na oznakama za AOP (0001 do 0012) kol. 5 + (0001 do 0012) kol. 6 + (0001 do 0012) kol. 7 bilansa stanja-izveštaja o neto imovini + (0401 do 0410) kol. 5 + (0401 do 0410) kol. 6 + (0401 do 0410) kol. 7 bilansa stanja-izveštaja o neto imovini + (1001 do 1020) kol. 5 + (1001 do 1020) kol. 6 bilansa uspeha > 0"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1352,7 +1352,7 @@ def Validate(Zahtev):
         if (suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):          
 
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="----------------FINANSIJSKI IZVEŠTAJ FOND1----------------"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1364,7 +1364,7 @@ def Validate(Zahtev):
             form_warnings.append(poruka_obrasca)
 
             #00001-1
-            if len(Zahtev.Forme['Finansijski izveštaj DPF 1'].TekstualnaPoljaForme["aop-10101-1"])==0:
+            if len(Zahtev.Forme['Fond 1'].TekstualnaPoljaForme["aop-10101-1"])==0:
                 hasError=True                
                 naziv_obrasca='Obrazac'
                 poruka  ="U zaglavlju obrasca, za konkretan fond potrebno je uneti njegov naziv"
@@ -1377,7 +1377,7 @@ def Validate(Zahtev):
             if not((suma(fia,1,12,5)+suma(fia,401,410,5))>0):
                 hasWarning=True                
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 5 > 0; Bilans stanja,po pravilu,mora imati iskazane podatke za tekući izveštajni period;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "    
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1393,7 +1393,7 @@ def Validate(Zahtev):
                 if not((suma(fia,1,12,6)+suma(fia,401,410,6))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 = 0; Bilans stanja za novoosnovane obveznike ne sme imati iskazane podatke za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga  "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1409,7 +1409,7 @@ def Validate(Zahtev):
                 if not((suma(fia,1,12,7)+suma(fia,401,410,7))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 7 + (0401 do 0410) kol. 7 = 0;Bilans stanja za novoosnovane obveznike  ne sme imati iskazano početno stanje za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1425,7 +1425,7 @@ def Validate(Zahtev):
                 if not((suma(fia,1,12,6)+suma(fia,401,410,6))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 > 0 ; Bilans stanja, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga   "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1441,7 +1441,7 @@ def Validate(Zahtev):
                 if not((suma(fia,1,12,7)+suma(fia,401,410,7))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 7 > 0; Bilans stanja,po pravilu, mora imati iskazano početno stanje za prethodni izveštajni period za obveznike koji vrše reklasifikaciju;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1460,7 +1460,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0012 kol. 5 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1474,7 +1474,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0012 kol. 6 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1488,7 +1488,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0012 kol. 7 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1502,7 +1502,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0404 kol. 5 = AOP-u (0401 + 0402 + 0403) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1516,7 +1516,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0404 kol. 6 = AOP-u (0401 + 0402 + 0403) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1530,7 +1530,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0404 kol. 7 = AOP-u (0401 + 0402 + 0403) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1544,7 +1544,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1558,7 +1558,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1572,7 +1572,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0410 kol. 7 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1586,7 +1586,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0012 - 0404) kol. 5; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1600,7 +1600,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0012 - 0404) kol. 6; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1614,7 +1614,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="   AOP 0410 kol. 7 = AOP-u (0012 - 0404) kol. 7; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1624,7 +1624,7 @@ def Validate(Zahtev):
             if not(suma(fia,1001,1020,5)>0):
                 hasWarning=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 5 > 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1640,7 +1640,7 @@ def Validate(Zahtev):
                 if not(suma(fia,1001,1020,6)==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 = 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1656,7 +1656,7 @@ def Validate(Zahtev):
                 if not(suma(fia,1001,1020,6)>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 > 0; Bilans uspeha, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1672,7 +1672,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1002,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1001 kol. 5 > 0, onda je AOP 1002 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1682,7 +1682,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1001,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="     Ako je AOP 1002 kol. 5 > 0, onda je AOP 1001 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1693,7 +1693,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1002,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1001 kol. 6 > 0,onda je AOP 1002 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1703,7 +1703,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1001,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1002 kol. 6 > 0,onda je AOP 1001 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1714,7 +1714,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1004,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1003 kol. 5 > 0,onda je AOP 1004 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1724,7 +1724,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1003,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1004 kol. 5 > 0,onda je AOP 1003 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1735,7 +1735,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1004,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1003 kol. 6 > 0,onda je AOP 1004 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1745,7 +1745,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1003,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1004 kol. 6 > 0,onda je AOP 1003 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1756,7 +1756,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1006,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="  Ako je AOP 1005 kol. 5 > 0,onda je AOP 1006 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1766,7 +1766,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1005,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="  Ako je AOP 1006 kol. 5 > 0,onda je AOP 1005 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1777,7 +1777,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1006,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="  Ako je AOP 1005 kol. 6 > 0,onda je AOP 1006 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1787,7 +1787,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1005,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="  Ako je AOP 1006 kol. 6 > 0,onda je AOP 1005 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1798,7 +1798,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1008,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1007 kol. 5 > 0,onda je AOP 1008 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1808,7 +1808,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1007,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1008 kol. 5 > 0,onda je AOP 1007 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1819,7 +1819,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1008,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1007 kol. 6 > 0,onda je AOP 1008 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1829,7 +1829,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1007,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1008 kol. 6 > 0,onda je AOP 1007 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1840,7 +1840,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1010,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1009 kol. 5 > 0,onda je AOP 1010 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1850,7 +1850,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1009,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1010 kol. 5 > 0,onda je AOP 1009 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1861,7 +1861,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1010,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1871,7 +1871,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1009,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1886,7 +1886,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP 1019 kol. 5 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1901,7 +1901,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP 1019 kol. 6 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1916,7 +1916,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP 1020 kol. 5 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1931,7 +1931,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP 1020 kol. 6 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1946,7 +1946,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP (1019 + 1020) kol. 5 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1961,7 +1961,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    AOP (1019 + 1020) kol. 6 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1972,7 +1972,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1020,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1019 kol. 5 > 0,onda je AOP 1020 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1982,7 +1982,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1019,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1020 kol. 5 > 0,onda je AOP 1019 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -1993,7 +1993,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1020,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1019 kol. 6 > 0,onda je AOP 1020 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2003,7 +2003,7 @@ def Validate(Zahtev):
                 if not(aop(fia,1019,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 1'
+                    naziv_obrasca='Fond 1'
                     poruka  ="    Ako je AOP 1020 kol. 6 > 0,onda je AOP 1019 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2017,7 +2017,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 5; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2031,7 +2031,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 1'
+                naziv_obrasca='Fond 1'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 6; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2055,7 +2055,7 @@ def Validate(Zahtev):
         #00000
         if not(suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="Zbir podataka na oznakama za AOP (0001 do 0012) kol. 5 + (0001 do 0012) kol. 6 + (0001 do 0012) kol. 7 bilansa stanja-izveštaja o neto imovini + (0401 do 0410) kol. 5 + (0401 do 0410) kol. 6 + (0401 do 0410) kol. 7 bilansa stanja-izveštaja o neto imovini + (1001 do 1020) kol. 5 + (1001 do 1020) kol. 6 bilansa uspeha > 0"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2065,7 +2065,7 @@ def Validate(Zahtev):
         if (suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):          
 
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="----------------FINANSIJSKI IZVEŠTAJ FOND2----------------"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2077,7 +2077,7 @@ def Validate(Zahtev):
             form_warnings.append(poruka_obrasca)
 
             #00001-1
-            if len(Zahtev.Forme['Finansijski izveštaj DPF 2'].TekstualnaPoljaForme["aop-10101-1"])==0:
+            if len(Zahtev.Forme['Fond 2'].TekstualnaPoljaForme["aop-10101-1"])==0:
                 hasError=True                
                 naziv_obrasca='Obrazac'
                 poruka  ="U zaglavlju obrasca, za konkretan fond potrebno je uneti njegov naziv"
@@ -2090,7 +2090,7 @@ def Validate(Zahtev):
             if not((suma(fib,1,12,5)+suma(fib,401,410,5))>0):
                 hasWarning=True                
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 5 > 0; Bilans stanja,po pravilu,mora imati iskazane podatke za tekući izveštajni period;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "    
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2106,7 +2106,7 @@ def Validate(Zahtev):
                 if not((suma(fib,1,12,6)+suma(fib,401,410,6))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 = 0; Bilans stanja za novoosnovane obveznike ne sme imati iskazane podatke za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga  "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2122,7 +2122,7 @@ def Validate(Zahtev):
                 if not((suma(fib,1,12,7)+suma(fib,401,410,7))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 7 + (0401 do 0410) kol. 7 = 0;Bilans stanja za novoosnovane obveznike  ne sme imati iskazano početno stanje za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2138,7 +2138,7 @@ def Validate(Zahtev):
                 if not((suma(fib,1,12,6)+suma(fib,401,410,6))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 > 0 ; Bilans stanja, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga   "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2154,7 +2154,7 @@ def Validate(Zahtev):
                 if not((suma(fib,1,12,7)+suma(fib,401,410,7))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 7 > 0; Bilans stanja,po pravilu, mora imati iskazano početno stanje za prethodni izveštajni period za obveznike koji vrše reklasifikaciju;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2173,7 +2173,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0012 kol. 5 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2187,7 +2187,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0012 kol. 6 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2201,7 +2201,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0012 kol. 7 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2215,7 +2215,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0404 kol. 5 = AOP-u (0401 + 0402 + 0403) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2229,7 +2229,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0404 kol. 6 = AOP-u (0401 + 0402 + 0403) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2243,7 +2243,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0404 kol. 7 = AOP-u (0401 + 0402 + 0403) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2257,7 +2257,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2271,7 +2271,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2285,7 +2285,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0410 kol. 7 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2299,7 +2299,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0012 - 0404) kol. 5; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2313,7 +2313,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0012 - 0404) kol. 6; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2327,7 +2327,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="   AOP 0410 kol. 7 = AOP-u (0012 - 0404) kol. 7; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2337,7 +2337,7 @@ def Validate(Zahtev):
             if not(suma(fib,1001,1020,5)>0):
                 hasWarning=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 5 > 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2353,7 +2353,7 @@ def Validate(Zahtev):
                 if not(suma(fib,1001,1020,6)==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 = 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2369,7 +2369,7 @@ def Validate(Zahtev):
                 if not(suma(fib,1001,1020,6)>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 > 0; Bilans uspeha, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2385,7 +2385,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1002,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1001 kol. 5 > 0, onda je AOP 1002 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2395,7 +2395,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1001,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="     Ako je AOP 1002 kol. 5 > 0, onda je AOP 1001 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2406,7 +2406,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1002,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1001 kol. 6 > 0,onda je AOP 1002 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2416,7 +2416,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1001,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1002 kol. 6 > 0,onda je AOP 1001 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2427,7 +2427,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1004,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1003 kol. 5 > 0,onda je AOP 1004 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2437,7 +2437,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1003,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1004 kol. 5 > 0,onda je AOP 1003 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2448,7 +2448,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1004,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1003 kol. 6 > 0,onda je AOP 1004 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2458,7 +2458,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1003,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1004 kol. 6 > 0,onda je AOP 1003 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2469,7 +2469,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1006,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="  Ako je AOP 1005 kol. 5 > 0,onda je AOP 1006 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2479,7 +2479,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1005,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="  Ako je AOP 1006 kol. 5 > 0,onda je AOP 1005 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2490,7 +2490,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1006,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="  Ako je AOP 1005 kol. 6 > 0,onda je AOP 1006 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2500,7 +2500,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1005,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="  Ako je AOP 1006 kol. 6 > 0,onda je AOP 1005 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2511,7 +2511,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1008,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1007 kol. 5 > 0,onda je AOP 1008 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2521,7 +2521,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1007,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1008 kol. 5 > 0,onda je AOP 1007 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2532,7 +2532,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1008,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1007 kol. 6 > 0,onda je AOP 1008 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2542,7 +2542,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1007,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1008 kol. 6 > 0,onda je AOP 1007 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2553,7 +2553,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1010,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1009 kol. 5 > 0,onda je AOP 1010 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2563,7 +2563,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1009,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1010 kol. 5 > 0,onda je AOP 1009 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2574,7 +2574,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1010,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2584,7 +2584,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1009,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2599,7 +2599,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP 1019 kol. 5 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2614,7 +2614,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP 1019 kol. 6 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2629,7 +2629,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP 1020 kol. 5 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2644,7 +2644,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP 1020 kol. 6 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2659,7 +2659,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP (1019 + 1020) kol. 5 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2674,7 +2674,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    AOP (1019 + 1020) kol. 6 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2685,7 +2685,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1020,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1019 kol. 5 > 0,onda je AOP 1020 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2695,7 +2695,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1019,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1020 kol. 5 > 0,onda je AOP 1019 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2706,7 +2706,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1020,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1019 kol. 6 > 0,onda je AOP 1020 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2716,7 +2716,7 @@ def Validate(Zahtev):
                 if not(aop(fib,1019,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 2'
+                    naziv_obrasca='Fond 2'
                     poruka  ="    Ako je AOP 1020 kol. 6 > 0,onda je AOP 1019 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2730,7 +2730,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 5; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2744,7 +2744,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 2'
+                naziv_obrasca='Fond 2'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 6; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2768,7 +2768,7 @@ def Validate(Zahtev):
         #00000
         if not(suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="Zbir podataka na oznakama za AOP (0001 do 0012) kol. 5 + (0001 do 0012) kol. 6 + (0001 do 0012) kol. 7 bilansa stanja-izveštaja o neto imovini + (0401 do 0410) kol. 5 + (0401 do 0410) kol. 6 + (0401 do 0410) kol. 7 bilansa stanja-izveštaja o neto imovini + (1001 do 1020) kol. 5 + (1001 do 1020) kol. 6 bilansa uspeha > 0"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2778,7 +2778,7 @@ def Validate(Zahtev):
         if (suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):          
 
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="----------------FINANSIJSKI IZVEŠTAJ FOND3----------------"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2790,7 +2790,7 @@ def Validate(Zahtev):
             form_warnings.append(poruka_obrasca)
 
             #00001-1
-            if len(Zahtev.Forme['Finansijski izveštaj DPF 3'].TekstualnaPoljaForme["aop-10101-1"])==0:
+            if len(Zahtev.Forme['Fond 3'].TekstualnaPoljaForme["aop-10101-1"])==0:
                 hasError=True                
                 naziv_obrasca='Obrazac'
                 poruka  ="U zaglavlju obrasca, za konkretan fond potrebno je uneti njegov naziv"
@@ -2803,7 +2803,7 @@ def Validate(Zahtev):
             if not((suma(fic,1,12,5)+suma(fic,401,410,5))>0):
                 hasWarning=True                
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 5 > 0; Bilans stanja,po pravilu,mora imati iskazane podatke za tekući izveštajni period;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "    
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2819,7 +2819,7 @@ def Validate(Zahtev):
                 if not((suma(fic,1,12,6)+suma(fic,401,410,6))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 = 0; Bilans stanja za novoosnovane obveznike ne sme imati iskazane podatke za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga  "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2835,7 +2835,7 @@ def Validate(Zahtev):
                 if not((suma(fic,1,12,7)+suma(fic,401,410,7))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 7 + (0401 do 0410) kol. 7 = 0;Bilans stanja za novoosnovane obveznike  ne sme imati iskazano početno stanje za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2851,7 +2851,7 @@ def Validate(Zahtev):
                 if not((suma(fic,1,12,6)+suma(fic,401,410,6))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 > 0 ; Bilans stanja, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga   "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2867,7 +2867,7 @@ def Validate(Zahtev):
                 if not((suma(fic,1,12,7)+suma(fic,401,410,7))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 7 > 0; Bilans stanja,po pravilu, mora imati iskazano početno stanje za prethodni izveštajni period za obveznike koji vrše reklasifikaciju;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2886,7 +2886,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0012 kol. 5 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2900,7 +2900,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0012 kol. 6 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2914,7 +2914,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0012 kol. 7 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2928,7 +2928,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0404 kol. 5 = AOP-u (0401 + 0402 + 0403) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2942,7 +2942,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0404 kol. 6 = AOP-u (0401 + 0402 + 0403) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2956,7 +2956,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0404 kol. 7 = AOP-u (0401 + 0402 + 0403) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2970,7 +2970,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2984,7 +2984,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -2998,7 +2998,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0410 kol. 7 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3012,7 +3012,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0012 - 0404) kol. 5; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3026,7 +3026,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0012 - 0404) kol. 6; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3040,7 +3040,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="   AOP 0410 kol. 7 = AOP-u (0012 - 0404) kol. 7; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3050,7 +3050,7 @@ def Validate(Zahtev):
             if not(suma(fic,1001,1020,5)>0):
                 hasWarning=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 5 > 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3066,7 +3066,7 @@ def Validate(Zahtev):
                 if not(suma(fic,1001,1020,6)==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 = 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3082,7 +3082,7 @@ def Validate(Zahtev):
                 if not(suma(fic,1001,1020,6)>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 > 0; Bilans uspeha, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3098,7 +3098,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1002,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1001 kol. 5 > 0, onda je AOP 1002 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3108,7 +3108,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1001,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="     Ako je AOP 1002 kol. 5 > 0, onda je AOP 1001 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3119,7 +3119,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1002,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1001 kol. 6 > 0,onda je AOP 1002 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3129,7 +3129,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1001,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1002 kol. 6 > 0,onda je AOP 1001 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3140,7 +3140,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1004,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1003 kol. 5 > 0,onda je AOP 1004 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3150,7 +3150,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1003,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1004 kol. 5 > 0,onda je AOP 1003 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3161,7 +3161,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1004,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1003 kol. 6 > 0,onda je AOP 1004 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3171,7 +3171,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1003,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1004 kol. 6 > 0,onda je AOP 1003 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3182,7 +3182,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1006,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="  Ako je AOP 1005 kol. 5 > 0,onda je AOP 1006 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3192,7 +3192,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1005,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="  Ako je AOP 1006 kol. 5 > 0,onda je AOP 1005 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3203,7 +3203,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1006,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="  Ako je AOP 1005 kol. 6 > 0,onda je AOP 1006 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3213,7 +3213,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1005,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="  Ako je AOP 1006 kol. 6 > 0,onda je AOP 1005 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3224,7 +3224,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1008,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1007 kol. 5 > 0,onda je AOP 1008 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3234,7 +3234,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1007,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1008 kol. 5 > 0,onda je AOP 1007 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3245,7 +3245,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1008,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1007 kol. 6 > 0,onda je AOP 1008 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3255,7 +3255,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1007,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1008 kol. 6 > 0,onda je AOP 1007 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3266,7 +3266,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1010,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1009 kol. 5 > 0,onda je AOP 1010 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3276,7 +3276,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1009,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1010 kol. 5 > 0,onda je AOP 1009 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3287,7 +3287,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1010,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3297,7 +3297,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1009,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3312,7 +3312,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP 1019 kol. 5 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3327,7 +3327,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP 1019 kol. 6 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3342,7 +3342,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP 1020 kol. 5 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3357,7 +3357,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP 1020 kol. 6 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3372,7 +3372,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP (1019 + 1020) kol. 5 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3387,7 +3387,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    AOP (1019 + 1020) kol. 6 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3398,7 +3398,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1020,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1019 kol. 5 > 0,onda je AOP 1020 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3408,7 +3408,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1019,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1020 kol. 5 > 0,onda je AOP 1019 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3419,7 +3419,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1020,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1019 kol. 6 > 0,onda je AOP 1020 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3429,7 +3429,7 @@ def Validate(Zahtev):
                 if not(aop(fic,1019,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 3'
+                    naziv_obrasca='Fond 3'
                     poruka  ="    Ako je AOP 1020 kol. 6 > 0,onda je AOP 1019 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3443,7 +3443,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 5; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3457,7 +3457,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 3'
+                naziv_obrasca='Fond 3'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 6; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3481,7 +3481,7 @@ def Validate(Zahtev):
         #00000
         if not(suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="Zbir podataka na oznakama za AOP (0001 do 0012) kol. 5 + (0001 do 0012) kol. 6 + (0001 do 0012) kol. 7 bilansa stanja-izveštaja o neto imovini + (0401 do 0410) kol. 5 + (0401 do 0410) kol. 6 + (0401 do 0410) kol. 7 bilansa stanja-izveštaja o neto imovini + (1001 do 1020) kol. 5 + (1001 do 1020) kol. 6 bilansa uspeha > 0"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3491,7 +3491,7 @@ def Validate(Zahtev):
         if (suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):          
 
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="----------------FINANSIJSKI IZVEŠTAJ FOND4----------------"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3503,7 +3503,7 @@ def Validate(Zahtev):
             form_warnings.append(poruka_obrasca)
 
             #00001-1
-            if len(Zahtev.Forme['Finansijski izveštaj DPF 4'].TekstualnaPoljaForme["aop-10101-1"])==0:
+            if len(Zahtev.Forme['Fond 4'].TekstualnaPoljaForme["aop-10101-1"])==0:
                 hasError=True                
                 naziv_obrasca='Obrazac'
                 poruka  ="U zaglavlju obrasca, za konkretan fond potrebno je uneti njegov naziv"
@@ -3516,7 +3516,7 @@ def Validate(Zahtev):
             if not((suma(fid,1,12,5)+suma(fid,401,410,5))>0):
                 hasWarning=True                
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 5 > 0; Bilans stanja,po pravilu,mora imati iskazane podatke za tekući izveštajni period;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "    
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3532,7 +3532,7 @@ def Validate(Zahtev):
                 if not((suma(fid,1,12,6)+suma(fid,401,410,6))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 = 0; Bilans stanja za novoosnovane obveznike ne sme imati iskazane podatke za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga  "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3548,7 +3548,7 @@ def Validate(Zahtev):
                 if not((suma(fid,1,12,7)+suma(fid,401,410,7))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 7 + (0401 do 0410) kol. 7 = 0;Bilans stanja za novoosnovane obveznike  ne sme imati iskazano početno stanje za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3564,7 +3564,7 @@ def Validate(Zahtev):
                 if not((suma(fid,1,12,6)+suma(fid,401,410,6))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 > 0 ; Bilans stanja, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga   "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3580,7 +3580,7 @@ def Validate(Zahtev):
                 if not((suma(fid,1,12,7)+suma(fid,401,410,7))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 7 > 0; Bilans stanja,po pravilu, mora imati iskazano početno stanje za prethodni izveštajni period za obveznike koji vrše reklasifikaciju;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3599,7 +3599,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0012 kol. 5 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3613,7 +3613,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0012 kol. 6 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3627,7 +3627,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0012 kol. 7 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3641,7 +3641,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0404 kol. 5 = AOP-u (0401 + 0402 + 0403) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3655,7 +3655,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0404 kol. 6 = AOP-u (0401 + 0402 + 0403) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3669,7 +3669,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0404 kol. 7 = AOP-u (0401 + 0402 + 0403) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3683,7 +3683,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3697,7 +3697,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3711,7 +3711,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0410 kol. 7 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3725,7 +3725,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0012 - 0404) kol. 5; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3739,7 +3739,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0012 - 0404) kol. 6; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3753,7 +3753,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="   AOP 0410 kol. 7 = AOP-u (0012 - 0404) kol. 7; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3763,7 +3763,7 @@ def Validate(Zahtev):
             if not(suma(fid,1001,1020,5)>0):
                 hasWarning=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 5 > 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3779,7 +3779,7 @@ def Validate(Zahtev):
                 if not(suma(fid,1001,1020,6)==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 = 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3795,7 +3795,7 @@ def Validate(Zahtev):
                 if not(suma(fid,1001,1020,6)>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 > 0; Bilans uspeha, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3811,7 +3811,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1002,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1001 kol. 5 > 0, onda je AOP 1002 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3821,7 +3821,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1001,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="     Ako je AOP 1002 kol. 5 > 0, onda je AOP 1001 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3832,7 +3832,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1002,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1001 kol. 6 > 0,onda je AOP 1002 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3842,7 +3842,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1001,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1002 kol. 6 > 0,onda je AOP 1001 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3853,7 +3853,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1004,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1003 kol. 5 > 0,onda je AOP 1004 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3863,7 +3863,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1003,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1004 kol. 5 > 0,onda je AOP 1003 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3874,7 +3874,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1004,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1003 kol. 6 > 0,onda je AOP 1004 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3884,7 +3884,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1003,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1004 kol. 6 > 0,onda je AOP 1003 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3895,7 +3895,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1006,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="  Ako je AOP 1005 kol. 5 > 0,onda je AOP 1006 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3905,7 +3905,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1005,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="  Ako je AOP 1006 kol. 5 > 0,onda je AOP 1005 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3916,7 +3916,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1006,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="  Ako je AOP 1005 kol. 6 > 0,onda je AOP 1006 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3926,7 +3926,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1005,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="  Ako je AOP 1006 kol. 6 > 0,onda je AOP 1005 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3937,7 +3937,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1008,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1007 kol. 5 > 0,onda je AOP 1008 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3947,7 +3947,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1007,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1008 kol. 5 > 0,onda je AOP 1007 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3958,7 +3958,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1008,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1007 kol. 6 > 0,onda je AOP 1008 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3968,7 +3968,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1007,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1008 kol. 6 > 0,onda je AOP 1007 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3979,7 +3979,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1010,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1009 kol. 5 > 0,onda je AOP 1010 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -3989,7 +3989,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1009,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1010 kol. 5 > 0,onda je AOP 1009 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4000,7 +4000,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1010,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4010,7 +4010,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1009,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4025,7 +4025,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP 1019 kol. 5 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4040,7 +4040,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP 1019 kol. 6 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4055,7 +4055,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP 1020 kol. 5 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4070,7 +4070,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP 1020 kol. 6 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4085,7 +4085,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP (1019 + 1020) kol. 5 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4100,7 +4100,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    AOP (1019 + 1020) kol. 6 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4111,7 +4111,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1020,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1019 kol. 5 > 0,onda je AOP 1020 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4121,7 +4121,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1019,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1020 kol. 5 > 0,onda je AOP 1019 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4132,7 +4132,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1020,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1019 kol. 6 > 0,onda je AOP 1020 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4142,7 +4142,7 @@ def Validate(Zahtev):
                 if not(aop(fid,1019,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 4'
+                    naziv_obrasca='Fond 4'
                     poruka  ="    Ako je AOP 1020 kol. 6 > 0,onda je AOP 1019 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4156,7 +4156,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 5; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4170,7 +4170,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 4'
+                naziv_obrasca='Fond 4'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 6; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4194,7 +4194,7 @@ def Validate(Zahtev):
         #00000
         if not(suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="Zbir podataka na oznakama za AOP (0001 do 0012) kol. 5 + (0001 do 0012) kol. 6 + (0001 do 0012) kol. 7 bilansa stanja-izveštaja o neto imovini + (0401 do 0410) kol. 5 + (0401 do 0410) kol. 6 + (0401 do 0410) kol. 7 bilansa stanja-izveštaja o neto imovini + (1001 do 1020) kol. 5 + (1001 do 1020) kol. 6 bilansa uspeha > 0"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4204,7 +4204,7 @@ def Validate(Zahtev):
         if (suma(fia,1,12,5) + suma(fia,1,12,6) + suma(fia,1,12,7) + suma(fia,401,410,5) + suma(fia,401,410,6) + suma(fia,401,410,7) + suma(fia,1001,1020,5) + suma(fia,1001,1020,6) > 0):          
 
             
-            naziv_obrasca='Finansijski izveštaj DPF 1'
+            naziv_obrasca='Fond 1'
             poruka  ="----------------FINANSIJSKI IZVEŠTAJ FOND5----------------"
             aop_pozicije=[]
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4216,7 +4216,7 @@ def Validate(Zahtev):
             form_warnings.append(poruka_obrasca)
 
             #00001-1
-            if len(Zahtev.Forme['Finansijski izveštaj DPF 5'].TekstualnaPoljaForme["aop-10101-1"])==0:
+            if len(Zahtev.Forme['Fond 5'].TekstualnaPoljaForme["aop-10101-1"])==0:
                 hasError=True                
                 naziv_obrasca='Obrazac'
                 poruka  ="U zaglavlju obrasca, za konkretan fond potrebno je uneti njegov naziv"
@@ -4229,7 +4229,7 @@ def Validate(Zahtev):
             if not((suma(fie,1,12,5)+suma(fie,401,410,5))>0):
                 hasWarning=True                
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 5 > 0; Bilans stanja,po pravilu,mora imati iskazane podatke za tekući izveštajni period;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "    
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4245,7 +4245,7 @@ def Validate(Zahtev):
                 if not((suma(fie,1,12,6)+suma(fie,401,410,6))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 = 0; Bilans stanja za novoosnovane obveznike ne sme imati iskazane podatke za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga  "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4261,7 +4261,7 @@ def Validate(Zahtev):
                 if not((suma(fie,1,12,7)+suma(fie,401,410,7))==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 7 + (0401 do 0410) kol. 7 = 0;Bilans stanja za novoosnovane obveznike  ne sme imati iskazano početno stanje za prethodni izveštajni period; Ukoliko su podaci prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4277,7 +4277,7 @@ def Validate(Zahtev):
                 if not((suma(fie,1,12,6)+suma(fie,401,410,6))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0012) kol. 6 + (0401 do 0410) kol. 6 > 0 ; Bilans stanja, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga   "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4293,7 +4293,7 @@ def Validate(Zahtev):
                 if not((suma(fie,1,12,7)+suma(fie,401,410,7))>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (0001 do 0410) kol. 7 > 0; Bilans stanja,po pravilu, mora imati iskazano početno stanje za prethodni izveštajni period za obveznike koji vrše reklasifikaciju;Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4312,7 +4312,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0012 kol. 5 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4326,7 +4326,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0012 kol. 6 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4340,7 +4340,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0012 kol. 7 = AOP-u (0001 + 0002 + 0003 + 0004 + 0005 + 0006 + 0007 + 0008 + 0009 + 0010 + 0011) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4354,7 +4354,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0404 kol. 5 = AOP-u (0401 + 0402 + 0403) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4368,7 +4368,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0404 kol. 6 = AOP-u (0401 + 0402 + 0403) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4382,7 +4382,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0404 kol. 7 = AOP-u (0401 + 0402 + 0403) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4396,7 +4396,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 5        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4410,7 +4410,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 6        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4424,7 +4424,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0410 kol. 7 = AOP-u (0405 + 0406 + 0407 - 0408 - 0409) kol. 7        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4438,7 +4438,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0410 kol. 5 = AOP-u (0012 - 0404) kol. 5; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4452,7 +4452,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP 0410 kol. 6 = AOP-u (0012 - 0404) kol. 6; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4466,7 +4466,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir        
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="   AOP 0410 kol. 7 = AOP-u (0012 - 0404) kol. 7; Kontrolno pravilo zahteva jednakost neto imovine raspoložive za penzije i razlike između ukupne imovine i ukupnih obaveza        "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4476,7 +4476,7 @@ def Validate(Zahtev):
             if not(suma(fie,1001,1020,5)>0):
                 hasWarning=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 5 > 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4492,7 +4492,7 @@ def Validate(Zahtev):
                 if not(suma(fie,1001,1020,6)==0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 = 0; Bilans uspeha,po pravilu, mora imati iskazane podatke za tekući izveštajni period; Ukoliko podaci nisu prikazani,zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4508,7 +4508,7 @@ def Validate(Zahtev):
                 if not(suma(fie,1001,1020,6)>0):
                     hasWarning=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Zbir podataka na oznakama za AOP (1001 do 1020) kol. 6 > 0; Bilans uspeha, po pravilu,  mora imati iskazane podatke za prethodni izveštajni period; Ukoliko podaci nisu prikazani, zakonski zastupnik svojim potpisom potvrđuje ispravnost toga "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4524,7 +4524,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1002,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1001 kol. 5 > 0, onda je AOP 1002 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4534,7 +4534,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1001,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="     Ako je AOP 1002 kol. 5 > 0, onda je AOP 1001 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4545,7 +4545,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1002,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1001 kol. 6 > 0,onda je AOP 1002 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4555,7 +4555,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1001,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1002 kol. 6 > 0,onda je AOP 1001 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4566,7 +4566,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1004,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1003 kol. 5 > 0,onda je AOP 1004 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4576,7 +4576,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1003,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1004 kol. 5 > 0,onda je AOP 1003 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4587,7 +4587,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1004,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1003 kol. 6 > 0,onda je AOP 1004 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4597,7 +4597,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1003,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1004 kol. 6 > 0,onda je AOP 1003 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4608,7 +4608,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1006,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="  Ako je AOP 1005 kol. 5 > 0,onda je AOP 1006 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4618,7 +4618,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1005,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="  Ako je AOP 1006 kol. 5 > 0,onda je AOP 1005 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4629,7 +4629,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1006,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="  Ako je AOP 1005 kol. 6 > 0,onda je AOP 1006 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4639,7 +4639,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1005,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="  Ako je AOP 1006 kol. 6 > 0,onda je AOP 1005 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazane neto pozitivne kursne razlike i neto negativne kursne razlike     "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4650,7 +4650,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1008,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1007 kol. 5 > 0,onda je AOP 1008 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4660,7 +4660,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1007,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1008 kol. 5 > 0,onda je AOP 1007 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4671,7 +4671,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1008,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1007 kol. 6 > 0,onda je AOP 1008 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4681,7 +4681,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1007,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1008 kol. 6 > 0,onda je AOP 1007 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4692,7 +4692,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1010,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1009 kol. 5 > 0,onda je AOP 1010 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4702,7 +4702,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1009,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1010 kol. 5 > 0,onda je AOP 1009 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4713,7 +4713,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1010,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4723,7 +4723,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1009,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1009 kol. 6 > 0,onda je AOP 1010 kol. 6 = 0,i obrnuto,ako je AOP 1010 kol. 6 > 0,onda je AOP 1009 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak    "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4738,7 +4738,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP 1019 kol. 5 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4753,7 +4753,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP 1019 kol. 6 = AOP-u (1001 - 1002 + 1003 - 1004 + 1005 - 1006 + 1007 - 1008 + 1009 - 1010 + 1011 + 1012 + 1013 + 1014 - 1015 - 1016 - 1017 - 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 > AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4768,7 +4768,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP 1020 kol. 5 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 5, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4783,7 +4783,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP 1020 kol. 6 = AOP-u (1002 - 1001 - 1003 + 1004 - 1005 + 1006 - 1007 + 1008 - 1009 + 1010 - 1011 - 1012 - 1013 - 1014 + 1015 + 1016 + 1017 + 1018) kol. 6, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 < AOP-a (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4798,7 +4798,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP (1019 + 1020) kol. 5 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 5; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4813,7 +4813,7 @@ def Validate(Zahtev):
                     razlika = lzbir - dzbir
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    AOP (1019 + 1020) kol. 6 = 0, ako je AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018) kol. 6; Rezultat mora biti jednak 0 ukoliko su pozitivne i odbitne stavke međusobno jednake    "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4824,7 +4824,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1020,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1019 kol. 5 > 0,onda je AOP 1020 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4834,7 +4834,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1019,5)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1020 kol. 5 > 0,onda je AOP 1019 kol. 5 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4845,7 +4845,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1020,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1019 kol. 6 > 0,onda je AOP 1020 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4855,7 +4855,7 @@ def Validate(Zahtev):
                 if not(aop(fie,1019,6)==0):
                     hasError=True
                     
-                    naziv_obrasca='Finansijski izveštaj DPF 5'
+                    naziv_obrasca='Fond 5'
                     poruka  ="    Ako je AOP 1020 kol. 6 > 0,onda je AOP 1019 kol. 6 = 0; U Bilansu uspeha ne mogu biti istovremeno prikazani dobitak i gubitak "
                     aop_pozicije=[]
                     poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4869,7 +4869,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 5 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 5; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
@@ -4883,7 +4883,7 @@ def Validate(Zahtev):
                 razlika = lzbir - dzbir
                 hasError=True
                 
-                naziv_obrasca='Finansijski izveštaj DPF 5'
+                naziv_obrasca='Fond 5'
                 poruka  ="    AOP (1001 + 1003 + 1005 + 1007 + 1009 + 1011 + 1012 + 1013 + 1014 + 1020) kol. 6 = AOP-u (1002 + 1004 + 1006 + 1008 + 1010 + 1015 + 1016 + 1017 + 1018 + 1019) kol. 6; Kontrolno pravilo odražava princip bilansne ravnoteže; Proverite prethodno nezadovoljena kontrolna pravila i izvršite neophodne ispravke   "  +  "(Levi zbir= " + str(lzbir) + ", Desni zbir= " + str(dzbir) + ", Razlika= " + str(razlika) + ") "
                 aop_pozicije=[]
                 poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}

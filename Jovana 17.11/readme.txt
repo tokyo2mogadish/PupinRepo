@@ -33,3 +33,20 @@ Potrebno je izmeniti Python skriptu kako bi se validirali samo odgovarajuci obra
             poruka_obrasca = {'naziv_obrasca': naziv_obrasca, 'poruka': poruka, 'aop_pozicije': aop_pozicije}
             form_errors.append(poruka_obrasca)
 U delu gde se proveravaju AOP polja obrasca, potrebno je pre provere dodati uslov da li je promenljiva koja sadrzi AOP-e razlicita od NULL (npr. bua != null).
+
+18.11
+Potrebne izmene koje smo uocili su u nastavku.
+
+Drustva za upravljanje DPF i DPF:
+
+DUDPF-DPF 2021-KP-VFI.py – u redu je za bilans stanja i bilans uspeha, ali potrebno je i za ostale obrasce izmeniti nazive tako da se poklapaju sa nazivom u bazi u tabeli sif_obrazac, npr. u getForme(Zahtev,'Finansijski izvestaj DPF 1') upisati 'Fond 1'...  U bazi su nazivi ovih obrazaca Fond 1, Fond 2, Fond 3, Fond 4 i Fond 5.
+Na isti nacin, naravno, potrebno je preraditi i DUDPF-DPF 2021-KP-RGFI.py.
+
+Osiguranja:
+OSIGURANJA 2021-KP-RGFI.py:
+Trebalo bi proveriti da li je razlicito od None i da li je len 0. Primer:
+
+if (bua == None or len(bua)==0):  treba da bude  if (bua != None and len(bua)==0):
+
+Takode, naravno, ovo vazi i za OSIGURANJA 2021-KP-KGFI.py i OSIGURANJA 2021-KP-VFI.py.
+
